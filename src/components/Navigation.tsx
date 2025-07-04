@@ -20,35 +20,54 @@ const Navigation = () => {
 
   const navItems = [
     {
-      title: 'About',
+      title: 'What we do',
       items: [
-        { title: 'Our Story', href: '/about-us/our-story' },
-        { title: 'Leadership', href: '/about-us/leadership' },
-        { title: 'Partnerships', href: '/about-us/partnerships' },
+        { title: 'Overview', href: '/services', description: 'Complete digital transformation solutions' },
+        { title: 'Industries', href: '/industries', description: 'Sector-specific expertise and solutions' },
+        { title: 'Services', href: '/services', description: 'Comprehensive technology services' },
+        { title: 'Products and Platforms', href: '/products', description: 'Our proprietary solutions and platforms' }
       ],
     },
     {
-      title: 'Solutions',
+      title: 'Who we are',
       items: [
-        { title: 'Services', href: '/services' },
-        { title: 'Products', href: '/products' },
-        { title: 'Our Brands', href: '/our-brands' },
+        { title: 'Overview', href: '/about-us/our-story', description: 'Our company story and mission' },
+        { title: 'About Us', href: '/about-us/our-story', description: 'Leadership and company culture' },
+        { title: 'Research & Innovation', href: '/about-us/partnerships', description: 'Our innovation initiatives' },
+        { title: 'Our Brand', href: '/our-brands', description: 'Brand portfolio and subsidiaries' }
       ],
     },
     {
-      title: 'Work',
+      title: 'Insights',
       items: [
-        { title: 'Case Studies', href: '/resources/case-studies' },
-        { title: 'Projects', href: '/resources/projects' },
-        { title: 'Clients', href: '/clients' },
+        { title: 'Case Studies', href: '/resources/case-studies', description: 'Success stories and outcomes' },
+        { title: 'What\'s New', href: '/whats-new', description: 'Latest news and updates' },
+        { title: 'Research & Insights', href: '/resources', description: 'Industry research and thought leadership' },
+        { title: 'Media Kit', href: '/resources/media-kit', description: 'Press resources and brand assets' }
       ],
     },
     {
-      title: 'Resources',
+      title: 'Careers',
       items: [
-        { title: 'Media Kit', href: '/resources/media-kit' },
-        { title: 'What\'s New', href: '/whats-new' },
-        { title: 'Testimonials', href: '/testimonials' },
+        { title: 'Overview', href: '/careers', description: 'Join our innovative team' },
+        { title: 'Life at Stacia Tech', href: '/careers', description: 'Our culture and values' },
+        { title: 'Current Openings', href: '/careers', description: 'Available positions' }
+      ],
+    },
+    {
+      title: 'Newsroom',
+      items: [
+        { title: 'Press Releases', href: '/whats-new', description: 'Latest company announcements' },
+        { title: 'Media Coverage', href: '/whats-new', description: 'Stacia Tech in the news' },
+        { title: 'Awards & Recognition', href: '/testimonials', description: 'Industry recognition' }
+      ],
+    },
+    {
+      title: 'Investors',
+      items: [
+        { title: 'Investor Relations', href: '/contact', description: 'Financial information and updates' },
+        { title: 'Annual Reports', href: '/resources', description: 'Financial performance' },
+        { title: 'Governance', href: '/about-us/leadership', description: 'Corporate governance' }
       ],
     },
   ];
@@ -85,36 +104,39 @@ const Navigation = () => {
                   <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
                 </button>
                 
-                {/* Dropdown */}
-                <div className="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <div className="bg-white rounded-xl shadow-2xl border border-gray-100 p-2">
-                    <div className="mb-3 px-3 py-2">
-                      <h4 className="font-semibold text-gray-900 text-sm">{item.title}</h4>
-                      <div className="w-8 h-0.5 bg-gradient-to-r from-violet-600 to-purple-600 mt-1"></div>
+                {/* Enhanced Dropdown */}
+                <div className="absolute top-full left-0 mt-2 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                  <div className="bg-white rounded-xl shadow-2xl border border-gray-100 p-6">
+                    <div className="mb-4">
+                      <h4 className="font-bold text-gray-900 text-base mb-1">{item.title}</h4>
+                      <div className="w-12 h-0.5 bg-gradient-to-r from-violet-600 to-purple-600"></div>
                     </div>
-                    {item.items.map((subItem) => (
-                      <Link
-                        key={subItem.href}
-                        to={subItem.href}
-                        className="block px-3 py-2 text-gray-600 hover:text-violet-600 hover:bg-violet-50 rounded-lg text-sm transition-colors duration-200"
-                      >
-                        {subItem.title}
-                      </Link>
-                    ))}
+                    <div className="space-y-3">
+                      {item.items.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          to={subItem.href}
+                          className="block group/item"
+                        >
+                          <div className="p-3 rounded-lg hover:bg-violet-50 transition-colors duration-200">
+                            <div className="font-semibold text-gray-900 group-hover/item:text-violet-600 text-sm mb-1">
+                              {subItem.title}
+                            </div>
+                            <div className="text-xs text-gray-600 leading-relaxed">
+                              {subItem.description}
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
 
             <div className="flex items-center space-x-4 ml-8">
-              <Link
-                to="/careers"
-                className="text-gray-700 hover:text-violet-600 font-medium px-4 py-2 rounded-lg transition-colors duration-300"
-              >
-                Careers
-              </Link>
               <Button className="stacia-button-primary">
-                <Link to="/contact">Get Started</Link>
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
@@ -132,7 +154,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl max-h-96 overflow-y-auto">
             <div className="p-6 space-y-6">
               {navItems.map((item) => (
                 <div key={item.title} className="space-y-3">
@@ -147,23 +169,17 @@ const Navigation = () => {
                         className="block py-2 text-gray-600 hover:text-violet-600 transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
-                        {subItem.title}
+                        <div className="font-medium text-sm">{subItem.title}</div>
+                        <div className="text-xs text-gray-500">{subItem.description}</div>
                       </Link>
                     ))}
                   </div>
                 </div>
               ))}
               
-              <div className="pt-6 border-t border-gray-200 space-y-4">
-                <Link
-                  to="/careers"
-                  className="block py-2 font-medium text-gray-900 hover:text-violet-600 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Careers
-                </Link>
+              <div className="pt-6 border-t border-gray-200">
                 <Button className="stacia-button-primary w-full">
-                  <Link to="/contact" onClick={() => setIsOpen(false)}>Get Started</Link>
+                  <Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link>
                 </Button>
               </div>
             </div>

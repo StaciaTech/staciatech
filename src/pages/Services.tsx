@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { 
   Sparkles, 
   Code, 
@@ -18,7 +19,13 @@ import {
   Zap,
   Globe,
   Users,
-  Award
+  Award,
+  Palette,
+  Database,
+  Cloud,
+  Smartphone,
+  Settings,
+  TestTube
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -63,21 +70,6 @@ const Services = () => {
         }
       });
 
-      // Process steps animation
-      gsap.fromTo('.process-step', 
-        { opacity: 0, x: -50 },
-        { 
-          opacity: 1, 
-          x: 0,
-          duration: 0.8,
-          stagger: 0.3,
-          scrollTrigger: {
-            trigger: '.process-section',
-            start: 'top 70%'
-          }
-        }
-      );
-
     }, containerRef);
 
     return () => ctx.revert();
@@ -85,93 +77,124 @@ const Services = () => {
 
   const services = [
     {
-      icon: Sparkles,
+      icon: Palette,
       title: 'Design Services',
-      description: 'Human-centered design that transforms complex challenges into intuitive digital experiences',
-      features: ['User Experience Research', 'Interface Design', 'Brand Identity', 'Prototyping & Wireframing'],
+      description: 'Creating visually appealing, user-centric designs that align with your brand identity and business objectives',
+      features: [
+        'UI/UX Design & Prototyping',
+        'Brand Identity Design', 
+        'Marketing Material Design',
+        'Digital Graphics Creation',
+        'Wireframing and Prototyping'
+      ],
       gradient: 'from-violet-600 to-purple-600',
-      image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      link: '/services/design'
     },
     {
       icon: Code,
       title: 'Development Services',
-      description: 'Scalable, cloud-native applications built with cutting-edge technologies and best practices',
-      features: ['React/Next.js Development', 'Mobile Apps (iOS/Android)', 'API Development', 'Cloud Solutions'],
+      description: 'Comprehensive solutions to create dynamic, high-performing applications and websites',
+      features: [
+        'Web Development (Frontend & Backend)',
+        'Mobile App Development (iOS & Android)',
+        'Custom Software Development',
+        'API Development & Integration',
+        'Cross-Platform App Development'
+      ],
       gradient: 'from-indigo-600 to-violet-600',
-      image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      link: '/services/development'
+    },
+    {
+      icon: Cloud,
+      title: 'DevOps and Infrastructure Management',
+      description: 'Streamline development lifecycle and ensure smooth, reliable operation of your applications',
+      features: [
+        'Infrastructure as Code (IaC)',
+        'Continuous Integration and Deployment (CI/CD)',
+        'Containerization',
+        'Microservices Architecture',
+        'Performance Optimization'
+      ],
+      gradient: 'from-purple-600 to-indigo-600',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      link: '/services/devops'
+    },
+    {
+      icon: Database,
+      title: 'Data and Analytics Services',
+      description: 'Transform raw data into actionable insights that drive strategic business decisions',
+      features: [
+        'Database Management',
+        'Business Intelligence (BI)',
+        'Data Visualization',
+        'Big Data Solutions',
+        'Machine Learning & AI'
+      ],
+      gradient: 'from-violet-600 to-purple-600',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      link: '/services/data-analytics'
     },
     {
       icon: Shield,
-      title: 'DevOps & Infrastructure',
-      description: 'Secure, scalable infrastructure solutions that grow with your business needs',
-      features: ['Cloud Infrastructure', 'CI/CD Pipelines', 'Containerization', 'Security Implementation'],
-      gradient: 'from-purple-600 to-indigo-600',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      icon: BarChart3,
-      title: 'Data & Analytics',
-      description: 'Transform raw data into actionable insights that drive strategic business decisions',
-      features: ['Database Management', 'Analytics Dashboards', 'Data Mining', 'Reporting Solutions'],
-      gradient: 'from-violet-600 to-purple-600',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      icon: Wrench,
-      title: 'Maintenance & Support',
-      description: 'Comprehensive ongoing support ensuring peak performance and reliability',
-      features: ['24/7 Monitoring', 'Performance Optimization', 'Bug Fixes', 'Updates & Patches'],
+      title: 'Cloud Infrastructure Management',
+      description: 'Designing, deploying, and managing cloud environments that are optimized for high availability, security, and performance',
+      features: [
+        'Cloud Strategy & Consultation',
+        'Cloud-Native Applications',
+        'Cloud Infrastructure Setup',
+        'Security & Compliance',
+        'Monitoring & Optimization'
+      ],
       gradient: 'from-indigo-600 to-violet-600',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      link: '/services/cloud'
     },
     {
-      icon: CheckCircle,
-      title: 'Quality Assurance',
-      description: 'Rigorous testing methodologies ensuring flawless user experiences',
-      features: ['Automated Testing', 'Performance Testing', 'Security Testing', 'User Acceptance Testing'],
+      icon: TestTube,
+      title: 'Quality Assurance (QA) and Testing Services',
+      description: 'Comprehensive testing methodologies ensuring flawless user experiences',
+      features: [
+        'Automated Testing',
+        'Performance Testing',
+        'Security Testing',
+        'User Acceptance Testing',
+        'Compatibility Testing'
+      ],
       gradient: 'from-purple-600 to-indigo-600',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      link: '/services/qa-testing'
+    },
+    {
+      icon: Settings,
+      title: 'Maintenance and Support Services',
+      description: 'Ongoing support ensuring peak performance and reliability of your applications',
+      features: [
+        'Bug Fixes and Updates',
+        '24/7 Monitoring',
+        'Performance Optimization',
+        'Security Hardening',
+        'Technical Support'
+      ],
+      gradient: 'from-violet-600 to-purple-600',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      link: '/services/maintenance'
     },
     {
       icon: MessageSquare,
       title: 'Consulting Services',
       description: 'Strategic guidance for digital transformation and technology optimization',
-      features: ['Digital Strategy', 'Technology Assessment', 'Process Optimization', 'Change Management'],
-      gradient: 'from-violet-600 to-purple-600',
-      image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    }
-  ];
-
-  const process = [
-    {
-      step: '01',
-      title: 'Discovery & Analysis',
-      description: 'We dive deep into your business requirements, challenges, and goals to create a comprehensive understanding of your needs.'
-    },
-    {
-      step: '02',
-      title: 'Strategy & Planning',
-      description: 'Our experts develop a tailored roadmap with clear milestones, timelines, and success metrics aligned with your objectives.'
-    },
-    {
-      step: '03',
-      title: 'Design & Development',
-      description: 'We bring your vision to life with cutting-edge technologies, following industry best practices and agile methodologies.'
-    },
-    {
-      step: '04',
-      title: 'Testing & Quality Assurance',
-      description: 'Rigorous testing ensures your solution meets the highest standards of performance, security, and user experience.'
-    },
-    {
-      step: '05',
-      title: 'Deployment & Launch',
-      description: 'Seamless deployment with comprehensive monitoring and support to ensure a successful launch and optimal performance.'
-    },
-    {
-      step: '06',
-      title: 'Support & Evolution',
-      description: 'Ongoing maintenance, updates, and enhancements to keep your solution at the forefront of technology.'
+      features: [
+        'Digital Strategy',
+        'Technology Assessment',
+        'Process Optimization',
+        'Change Management',
+        'IT Consulting'
+      ],
+      gradient: 'from-indigo-600 to-violet-600',
+      image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      link: '/services/consulting'
     }
   ];
 
@@ -209,7 +232,7 @@ const Services = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button variant="outline" className="text-lg px-10 py-6 border-2 border-gray-300 text-gray-700 hover:bg-gray-50">
-                View Case Studies
+                <Link to="/resources/case-studies">View Case Studies</Link>
               </Button>
             </div>
 
@@ -273,45 +296,20 @@ const Services = () => {
                   
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-violet-600 rounded-full mr-3" />
+                      <li key={featureIndex} className="flex items-start text-sm text-gray-600">
+                        <div className="w-2 h-2 bg-violet-600 rounded-full mr-3 mt-2 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex items-center text-violet-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                    <span className="mr-2">Learn More</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+                  <Button asChild variant="outline" className="w-full group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
+                    <Link to={service.link}>
+                      Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                    </Link>
+                  </Button>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="process-section py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="stacia-container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold stacia-text-gradient mb-6">Our Process</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A proven methodology that ensures successful project delivery every time
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            {process.map((item, index) => (
-              <div key={index} className="process-step flex items-start mb-12 last:mb-0">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-violet-600 to-purple-600 rounded-2xl flex items-center justify-center mr-6">
-                  <span className="text-white font-bold text-lg">{item.step}</span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </div>
-              </div>
             ))}
           </div>
         </div>
@@ -325,11 +323,11 @@ const Services = () => {
             Let's discuss how our comprehensive services can accelerate your digital transformation journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button className="bg-white text-violet-600 hover:bg-gray-100 text-lg px-10 py-6">
-              Start Your Project
+            <Button asChild className="bg-white text-violet-600 hover:bg-gray-100 text-lg px-10 py-6">
+              <Link to="/contact">Start Your Project</Link>
             </Button>
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6">
-              Schedule Consultation
+            <Button asChild variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6">
+              <Link to="/contact">Schedule Consultation</Link>
             </Button>
           </div>
         </div>

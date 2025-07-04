@@ -11,6 +11,7 @@ import Partnerships from "./pages/Partnerships";
 import Services from "./pages/Services";
 import Products from "./pages/Products";
 import OurBrands from "./pages/OurBrands";
+import Industries from "./pages/Industries";
 import Clients from "./pages/Clients";
 import Resources from "./pages/Resources";
 import CaseStudies from "./pages/CaseStudies";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
           <Route path="/our-brands" element={<OurBrands />} />
+          <Route path="/industries" element={<Industries />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/case-studies" element={<CaseStudies />} />

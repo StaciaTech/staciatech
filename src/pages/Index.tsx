@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import ServicesShowcase from '@/components/ServicesShowcase';
+import IndustriesSection from '@/components/IndustriesSection';
 import ChatBot from '@/components/ChatBot';
 import LoadingAnimation from '@/components/LoadingAnimation';
 import { Button } from '@/components/ui/button';
@@ -96,6 +97,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <ServicesShowcase />
+      <IndustriesSection />
 
       {/* Products Showcase */}
       <section className="stacia-section bg-white">
