@@ -60,6 +60,7 @@
   body {
     @apply bg-background text-foreground font-inter;
     overflow-x: hidden;
+    color: #1f2937; /* Ensure dark text on light backgrounds */
   }
 
   html {
@@ -86,6 +87,16 @@
 }
 
 @layer components {
+  /* Enhanced Loading Animation */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) skewX(-12deg); }
+    100% { transform: translateX(200%) skewX(-12deg); }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
   /* Professional Design System */
   .stacia-gradient-bg {
     background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%);
@@ -150,7 +161,7 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Parallax Effects */
+  /* Enhanced Parallax Effects */
   .parallax-container {
     transform-style: preserve-3d;
     perspective: 1000px;
@@ -214,28 +225,33 @@
     @apply hover:scale-105 hover:shadow-lg;
   }
 
-  /* Professional Typography */
+  /* Professional Typography - Fixed text visibility */
   .stacia-heading-xl {
     @apply text-5xl md:text-7xl font-bold leading-tight;
+    color: #1f2937; /* Ensure visibility */
   }
 
   .stacia-heading-lg {
     @apply text-4xl md:text-6xl font-bold leading-tight;
+    color: #1f2937; /* Ensure visibility */
   }
 
   .stacia-heading-md {
     @apply text-3xl md:text-4xl font-semibold leading-tight;
+    color: #1f2937; /* Ensure visibility */
   }
 
   .stacia-body-lg {
     @apply text-lg md:text-xl leading-relaxed;
+    color: #4b5563; /* Ensure visibility */
   }
 
   .stacia-body-md {
     @apply text-base md:text-lg leading-relaxed;
+    color: #4b5563; /* Ensure visibility */
   }
 
-  /* Animations */
+  /* Enhanced Animations */
   .stacia-fade-in {
     animation: fadeInUp 0.8s ease-out forwards;
   }
@@ -281,7 +297,7 @@
     }
   }
 
-  /* Professional Grid */
+  /* Enhanced Grid */
   .stacia-grid {
     display: grid;
     gap: 2rem;
@@ -312,6 +328,28 @@
   .stacia-section-lg {
     @apply py-28 lg:py-36;
   }
+
+  /* GSAP Enhanced Microinteractions */
+  .gsap-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gsap-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Enhanced Button Styles */
+  .btn-primary {
+    @apply bg-gradient-to-r from-violet-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold;
+    @apply hover:from-violet-700 hover:to-purple-700 transition-all duration-300;
+    @apply shadow-lg hover:shadow-xl hover:shadow-violet-500/25;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold;
+    @apply hover:border-violet-300 hover:text-violet-600 transition-all duration-300;
+    @apply shadow-lg hover:shadow-xl;
+  }
 }
 
 @layer utilities {
@@ -333,6 +371,15 @@
 
   .animation-delay-1000 {
     animation-delay: 1000ms;
+  }
+
+  /* Text visibility fixes */
+  .text-ensure-visible {
+    color: #1f2937 !important;
+  }
+
+  .text-ensure-light {
+    color: #6b7280 !important;
   }
 
   /* Responsive Text */
@@ -366,6 +413,17 @@
     .parallax-medium,
     .parallax-fast {
       animation: none;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .stacia-text-gradient {
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
+      background-clip: unset;
+      color: #1f2937;
     }
   }
 }
