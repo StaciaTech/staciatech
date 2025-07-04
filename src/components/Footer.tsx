@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
-import { Github, Twitter, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   const footerSections = [
@@ -49,67 +50,95 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-stacia-blue-900 via-stacia-gray-800 to-stacia-blue-900 text-white">
-      {/* Neural Network Background */}
-      <div className="neural-bg">
-        <div className="stacia-container stacia-section-padding">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-            {/* Brand Section */}
-            <div className="lg:col-span-2">
-              <Link to="/" className="flex items-center space-x-3 mb-6 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-electric-blue to-vibrant-purple rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-2xl font-space">S</span>
-                </div>
-                <span className="text-2xl font-bold text-white">Stacia Tech</span>
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      {/* CTA Section */}
+      <div className="stacia-container py-16 border-b border-gray-700">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="stacia-heading-lg text-white mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="stacia-body-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Join hundreds of companies that trust Stacia Tech to drive their digital innovation and accelerate growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild className="stacia-button-primary">
+              <Link to="/contact">
+                Start Your Journey
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              
-              <p className="text-stacia-gray-300 text-lg mb-8 leading-relaxed">
-                Premier partner for comprehensive digital solutions and groundbreaking AI-driven products. 
-                Empowering enterprises, startups, and innovators to thrive in the digital future.
-              </p>
+            </Button>
+            <Button variant="outline" asChild className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white">
+              <Link to="/resources/case-studies">View Success Stories</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
 
-              {/* Contact Info */}
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 text-stacia-gray-300">
-                  <Mail className="h-5 w-5 text-electric-blue" />
-                  <span>hello@staciatech.com</span>
-                </div>
-                <div className="flex items-center space-x-3 text-stacia-gray-300">
-                  <Phone className="h-5 w-5 text-electric-blue" />
-                  <span>+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center space-x-3 text-stacia-gray-300">
-                  <MapPin className="h-5 w-5 text-electric-blue" />
-                  <span>Global Headquarters, Tech District</span>
-                </div>
+      {/* Main Footer Content */}
+      <div className="stacia-container py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Brand Section */}
+          <div className="lg:col-span-2">
+            <Link to="/" className="flex items-center space-x-3 mb-8 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-xl font-space">S</span>
+              </div>
+              <div>
+                <span className="text-2xl font-bold text-white">Stacia Tech</span>
+                <div className="text-sm text-gray-400">Digital Innovation</div>
+              </div>
+            </Link>
+            
+            <p className="text-gray-300 stacia-body-md mb-8 leading-relaxed">
+              Premier partner for comprehensive digital solutions and groundbreaking AI-driven products. 
+              Empowering enterprises, startups, and innovators to thrive in the digital future.
+            </p>
+
+            {/* Contact Info */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Mail className="h-5 w-5 text-violet-400" />
+                <span>hello@staciatech.com</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Phone className="h-5 w-5 text-violet-400" />
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <MapPin className="h-5 w-5 text-violet-400" />
+                <span>Global Headquarters, Tech District</span>
               </div>
             </div>
-
-            {/* Links Sections */}
-            {footerSections.map((section) => (
-              <div key={section.title}>
-                <h3 className="text-lg font-semibold text-white mb-6">
-                  {section.title}
-                </h3>
-                <ul className="space-y-4">
-                  {section.links.map((link) => (
-                    <li key={link.title}>
-                      <Link
-                        to={link.href}
-                        className="text-stacia-gray-300 hover:text-electric-blue transition-colors duration-300 stacia-link"
-                      >
-                        {link.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
 
-          {/* Bottom Section */}
-          <div className="border-t border-stacia-gray-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <div className="text-stacia-gray-400 text-sm mb-4 md:mb-0">
+          {/* Links Sections */}
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="text-lg font-semibold text-white mb-6">
+                {section.title}
+              </h3>
+              <ul className="space-y-4">
+                {section.links.map((link) => (
+                  <li key={link.title}>
+                    <Link
+                      to={link.href}
+                      className="text-gray-300 hover:text-violet-400 transition-colors duration-300 hover:translate-x-1 inline-block"
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="border-t border-gray-700">
+        <div className="stacia-container py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-gray-400 text-sm mb-4 md:mb-0">
               © 2024 Stacia Tech. All rights reserved. Built with innovation and passion.
             </div>
 
@@ -119,7 +148,7 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="text-stacia-gray-400 hover:text-electric-blue transition-colors duration-300 transform hover:scale-110"
+                  className="text-gray-400 hover:text-violet-400 transition-colors duration-300 transform hover:scale-110"
                   aria-label={social.label}
                 >
                   <social.icon className="h-6 w-6" />
@@ -127,23 +156,13 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
-          {/* CTA Banner */}
-          <div className="mt-12 p-8 bg-gradient-to-r from-electric-blue/10 to-vibrant-purple/10 rounded-2xl border border-electric-blue/20 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-stacia-gray-300 mb-6 max-w-2xl mx-auto">
-              Join hundreds of companies that trust Stacia Tech to drive their digital innovation and growth.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-electric-blue to-vibrant-purple text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-electric-blue/30 transition-all duration-300 transform hover:scale-105"
-            >
-              Start Your Journey
-            </Link>
-          </div>
         </div>
+      </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-violet-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
       </div>
     </footer>
   );

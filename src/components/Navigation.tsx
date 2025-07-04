@@ -2,15 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,33 +22,33 @@ const Navigation = () => {
     {
       title: 'About',
       items: [
-        { title: 'Our Story', href: '/about-us/our-story', description: 'Discover our journey and mission' },
-        { title: 'Leadership', href: '/about-us/leadership', description: 'Meet our executive team' },
-        { title: 'Partnerships', href: '/about-us/partnerships', description: 'Strategic collaborations' },
+        { title: 'Our Story', href: '/about-us/our-story' },
+        { title: 'Leadership', href: '/about-us/leadership' },
+        { title: 'Partnerships', href: '/about-us/partnerships' },
       ],
     },
     {
       title: 'Solutions',
       items: [
-        { title: 'Services', href: '/services', description: 'Comprehensive digital services' },
-        { title: 'Products', href: '/products', description: 'AI-powered product suite' },
-        { title: 'Our Brands', href: '/our-brands', description: 'Specialized brand portfolio' },
+        { title: 'Services', href: '/services' },
+        { title: 'Products', href: '/products' },
+        { title: 'Our Brands', href: '/our-brands' },
       ],
     },
     {
       title: 'Work',
       items: [
-        { title: 'Case Studies', href: '/resources/case-studies', description: 'Success stories & insights' },
-        { title: 'Projects', href: '/resources/projects', description: 'Innovation showcase' },
-        { title: 'Clients', href: '/clients', description: 'Trusted partnerships' },
+        { title: 'Case Studies', href: '/resources/case-studies' },
+        { title: 'Projects', href: '/resources/projects' },
+        { title: 'Clients', href: '/clients' },
       ],
     },
     {
       title: 'Resources',
       items: [
-        { title: 'Media Kit', href: '/resources/media-kit', description: 'Brand assets & information' },
-        { title: 'What\'s New', href: '/whats-new', description: 'Latest updates & insights' },
-        { title: 'Testimonials', href: '/testimonials', description: 'Client feedback' },
+        { title: 'Media Kit', href: '/resources/media-kit' },
+        { title: 'What\'s New', href: '/whats-new' },
+        { title: 'Testimonials', href: '/testimonials' },
       ],
     },
   ];
@@ -65,98 +57,86 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-black/5 border-b border-stacia-gray-200/50'
+          ? 'stacia-nav-blur shadow-lg'
           : 'bg-transparent'
       }`}
     >
       <div className="stacia-container">
-        <div className="flex items-center justify-between h-20">
-          {/* Enhanced Logo */}
+        <div className="flex items-center justify-between h-16">
+          {/* Professional Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-electric-blue to-vibrant-purple rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg shadow-electric-blue/20">
-                <span className="text-white font-bold text-xl font-space">S</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-purple-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
+                <span className="text-white font-bold text-lg font-space">S</span>
               </div>
-              <div className="absolute inset-0 w-12 h-12 bg-gradient-to-br from-electric-blue to-vibrant-purple rounded-xl opacity-0 group-hover:opacity-30 blur-md transition-opacity duration-300" />
             </div>
             <div className="hidden sm:block">
-              <span className="text-2xl font-bold stacia-text-gradient">Stacia Tech</span>
-              <div className="text-xs text-stacia-gray-500 font-medium">Digital Excellence</div>
+              <span className="text-xl font-bold text-gray-900">Stacia Tech</span>
+              <div className="text-xs text-gray-500 font-medium">Digital Innovation</div>
             </div>
           </Link>
 
-          {/* Enhanced Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-2">
-            <NavigationMenu>
-              <NavigationMenuList className="space-x-2">
-                {navItems.map((item) => (
-                  <NavigationMenuItem key={item.title}>
-                    <NavigationMenuTrigger className="text-stacia-gray-700 hover:text-electric-blue transition-colors duration-300 font-semibold px-4 py-2 rounded-lg hover:bg-stacia-blue-50/50">
-                      {item.title}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid w-[420px] gap-2 p-6 bg-white/95 backdrop-blur-xl border border-stacia-gray-200/50 shadow-2xl shadow-black/10">
-                        <div className="mb-4">
-                          <h4 className="text-lg font-bold text-stacia-gray-900 mb-2">{item.title}</h4>
-                          <div className="w-12 h-1 bg-gradient-to-r from-electric-blue to-vibrant-purple rounded-full" />
-                        </div>
-                        {item.items.map((subItem) => (
-                          <NavigationMenuLink key={subItem.href} asChild>
-                            <Link
-                              to={subItem.href}
-                              className="block p-4 rounded-xl hover:bg-gradient-to-r hover:from-electric-blue/5 hover:to-vibrant-purple/5 transition-all duration-300 group border border-transparent hover:border-electric-blue/20"
-                            >
-                              <div className="font-semibold text-stacia-gray-900 group-hover:text-electric-blue transition-colors mb-1">
-                                {subItem.title}
-                              </div>
-                              <div className="text-sm text-stacia-gray-600 leading-relaxed">
-                                {subItem.description}
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <div key={item.title} className="relative group">
+                <button className="flex items-center px-4 py-2 text-gray-700 hover:text-violet-600 font-medium transition-colors duration-300 rounded-lg hover:bg-gray-50">
+                  {item.title}
+                  <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                </button>
+                
+                {/* Dropdown */}
+                <div className="absolute top-full left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="bg-white rounded-xl shadow-2xl border border-gray-100 p-2">
+                    <div className="mb-3 px-3 py-2">
+                      <h4 className="font-semibold text-gray-900 text-sm">{item.title}</h4>
+                      <div className="w-8 h-0.5 bg-gradient-to-r from-violet-600 to-purple-600 mt-1"></div>
+                    </div>
+                    {item.items.map((subItem) => (
+                      <Link
+                        key={subItem.href}
+                        to={subItem.href}
+                        className="block px-3 py-2 text-gray-600 hover:text-violet-600 hover:bg-violet-50 rounded-lg text-sm transition-colors duration-200"
+                      >
+                        {subItem.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
 
             <div className="flex items-center space-x-4 ml-8">
               <Link
                 to="/careers"
-                className="text-stacia-gray-700 hover:text-electric-blue transition-colors duration-300 font-semibold px-4 py-2 rounded-lg hover:bg-stacia-blue-50/50 stacia-link"
+                className="text-gray-700 hover:text-violet-600 font-medium px-4 py-2 rounded-lg transition-colors duration-300"
               >
                 Careers
               </Link>
-              <Button asChild className="stacia-button-primary shadow-lg">
+              <Button className="stacia-button-primary">
                 <Link to="/contact">Get Started</Link>
               </Button>
             </div>
           </div>
 
-          {/* Enhanced Mobile Menu Button */}
+          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden relative w-12 h-12 rounded-xl hover:bg-stacia-blue-50"
+            className="lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <div className="relative w-6 h-6">
-              <span className={`absolute block w-6 h-0.5 bg-stacia-gray-700 transform transition-all duration-300 ${isOpen ? 'rotate-45 top-3' : 'top-1'}`} />
-              <span className={`absolute block w-6 h-0.5 bg-stacia-gray-700 transform transition-all duration-300 ${isOpen ? 'opacity-0' : 'top-3'}`} />
-              <span className={`absolute block w-6 h-0.5 bg-stacia-gray-700 transform transition-all duration-300 ${isOpen ? '-rotate-45 top-3' : 'top-5'}`} />
-            </div>
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
-        {/* Enhanced Mobile Navigation */}
+        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-stacia-gray-200/50 shadow-2xl">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl">
             <div className="p-6 space-y-6">
               {navItems.map((item) => (
                 <div key={item.title} className="space-y-3">
-                  <div className="font-bold text-stacia-gray-900 text-lg">
+                  <div className="font-semibold text-gray-900">
                     {item.title}
                   </div>
                   <div className="grid gap-2 pl-4">
@@ -164,30 +144,25 @@ const Navigation = () => {
                       <Link
                         key={subItem.href}
                         to={subItem.href}
-                        className="block p-3 rounded-lg hover:bg-stacia-blue-50 transition-colors group"
+                        className="block py-2 text-gray-600 hover:text-violet-600 transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
-                        <div className="font-semibold text-stacia-gray-800 group-hover:text-electric-blue transition-colors">
-                          {subItem.title}
-                        </div>
-                        <div className="text-sm text-stacia-gray-600 mt-1">
-                          {subItem.description}
-                        </div>
+                        {subItem.title}
                       </Link>
                     ))}
                   </div>
                 </div>
               ))}
               
-              <div className="pt-6 border-t border-stacia-gray-200 space-y-4">
+              <div className="pt-6 border-t border-gray-200 space-y-4">
                 <Link
                   to="/careers"
-                  className="block p-3 font-semibold text-stacia-gray-900 hover:text-electric-blue transition-colors rounded-lg hover:bg-stacia-blue-50"
+                  className="block py-2 font-medium text-gray-900 hover:text-violet-600 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Careers
                 </Link>
-                <Button asChild className="stacia-button-primary w-full">
+                <Button className="stacia-button-primary w-full">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>Get Started</Link>
                 </Button>
               </div>
