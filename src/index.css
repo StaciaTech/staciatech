@@ -3,40 +3,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Stacia Tech Design System - Futuristic & Dynamic */
+/* Enhanced Stacia Tech Design System */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 30 30% 11%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -91,27 +81,58 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Enhanced Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #00C0FF, #A020F0);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #0099CC, #8A1ACC);
+  }
 }
 
 @layer components {
-  /* Custom Stacia Tech Components */
+  /* Enhanced Stacia Tech Components */
   .stacia-gradient-bg {
-    background: linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 50%, #E1E9F4 100%);
+    background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 50%, #F1F5F9 100%);
   }
 
   .stacia-hero-gradient {
-    background: radial-gradient(ellipse at center, rgba(0,192,255,0.1) 0%, rgba(240,244,248,0.8) 50%, rgba(255,255,255,1) 100%);
+    background: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0,192,255,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 70% 80%, rgba(160,32,240,0.1) 0%, transparent 60%),
+      linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
   }
 
   .stacia-card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:shadow-electric-blue/10 hover:-translate-y-2;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:shadow-2xl hover:shadow-electric-blue/10;
+    @apply hover:-translate-y-3 hover:scale-[1.02];
+    transform-origin: center;
   }
 
   .stacia-text-gradient {
-    background: linear-gradient(135deg, #1E3A8A 0%, #00C0FF 50%, #A020F0 100%);
+    background: linear-gradient(135deg, #1E3A8A 0%, #00C0FF 30%, #A020F0 70%, #00FFFF 100%);
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradient-shift 8s ease-in-out infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   .stacia-glow-border {
@@ -122,9 +143,26 @@
   }
 
   .stacia-button-primary {
-    @apply bg-gradient-to-r from-electric-blue to-vibrant-purple text-white px-8 py-4 rounded-lg font-semibold;
-    @apply hover:shadow-lg hover:shadow-electric-blue/30 transition-all duration-300;
+    @apply bg-gradient-to-r from-electric-blue via-electric-cyan to-vibrant-purple;
+    @apply text-white px-8 py-4 rounded-xl font-semibold;
+    @apply hover:shadow-2xl hover:shadow-electric-blue/40 transition-all duration-300;
     @apply hover:scale-105 active:scale-95;
+    @apply relative overflow-hidden;
+  }
+
+  .stacia-button-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .stacia-button-primary:hover::before {
+    left: 100%;
   }
 
   .stacia-section-padding {
@@ -135,14 +173,15 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Interactive Underline Animation */
+  /* Enhanced Interactive Elements */
   .stacia-link {
-    @apply relative inline-block;
+    @apply relative inline-block transition-all duration-300;
   }
 
   .stacia-link::after {
     content: '';
-    @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-electric-blue;
+    @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0;
+    @apply bg-gradient-to-r from-electric-blue to-vibrant-purple;
     @apply origin-bottom-right transition-transform duration-300;
   }
 
@@ -150,22 +189,79 @@
     @apply scale-x-100 origin-bottom-left;
   }
 
-  /* Loading Animation */
+  /* Enhanced Neural Network Background */
+  .neural-bg {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0,192,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 25%, rgba(160,32,240,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 25% 75%, rgba(0,245,255,0.06) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(175,255,0,0.04) 0%, transparent 50%);
+    background-size: 800px 800px, 600px 600px, 400px 400px, 300px 300px;
+    animation: neural-pulse 20s ease-in-out infinite;
+  }
+
+  @keyframes neural-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  /* Glass Morphism Effects */
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-morphism-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Enhanced Loading Animations */
   .stacia-loading-bar {
     @apply w-full h-1 bg-stacia-gray-200 overflow-hidden rounded-full;
   }
 
   .stacia-loading-progress {
     @apply h-full bg-gradient-to-r from-electric-blue via-vibrant-purple to-electric-cyan;
-    @apply animate-pulse;
+    animation: loading-pulse 2s ease-in-out infinite;
   }
 
-  /* Neural Network Background Pattern */
-  .neural-bg {
-    background-image: 
-      radial-gradient(circle at 20% 50%, rgba(0,192,255,0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(160,32,240,0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, rgba(0,245,255,0.1) 0%, transparent 50%);
+  @keyframes loading-pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+
+  /* Parallax Effects */
+  .parallax-slow {
+    transform: translate3d(0, 0, 0);
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  .parallax-medium {
+    transform: translate3d(0, 0, 0);
+    animation: float-medium 4s ease-in-out infinite;
+  }
+
+  .parallax-fast {
+    transform: translate3d(0, 0, 0);
+    animation: float-fast 3s ease-in-out infinite;
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-2deg); }
+  }
+
+  @keyframes float-fast {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(3deg); }
   }
 }
 
@@ -186,12 +282,39 @@
     animation-delay: 600ms;
   }
 
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+
   /* Smooth scrolling for reduced motion users */
   @media (prefers-reduced-motion: reduce) {
     * {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+    }
+
+    .stacia-text-gradient {
+      animation: none;
+    }
+
+    .neural-bg {
+      animation: none;
+    }
+  }
+
+  /* Enhanced Responsive Design */
+  @media (max-width: 768px) {
+    .stacia-text-gradient {
+      background-size: 200% 200%;
+    }
+    
+    .stacia-card-hover:hover {
+      transform: translateY(-2px) scale(1.01);
     }
   }
 }
