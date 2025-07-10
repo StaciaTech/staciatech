@@ -61,20 +61,20 @@ const IndustriesSection = () => {
   }, []);
 
   const industries = [
-    {
-      icon: Building2,
-      title: 'Banking',
-      description: 'Digital banking solutions and financial technology innovations',
-      color: 'from-blue-600 to-blue-700',
-      link: '/industries/banking'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Capital Markets',
-      description: 'Advanced trading platforms and market analytics',
-      color: 'from-green-600 to-green-700',
-      link: '/industries/capital-markets'
-    },
+    // {
+    //   icon: Building2,
+    //   title: 'Banking',
+    //   description: 'Digital banking solutions and financial technology innovations',
+    //   color: 'from-blue-600 to-blue-700',
+    //   link: '/industries/banking'
+    // },
+    // {
+    //   icon: TrendingUp,
+    //   title: 'Capital Markets',
+    //   description: 'Advanced trading platforms and market analytics',
+    //   color: 'from-green-600 to-green-700',
+    //   link: '/industries/capital-markets'
+    // },
     {
       icon: Radio,
       title: 'Communications, Media & Information Services',
@@ -117,20 +117,20 @@ const IndustriesSection = () => {
       color: 'from-violet-600 to-violet-700',
       link: '/industries/high-tech'
     },
-    {
-      icon: Shield,
-      title: 'Insurance',
-      description: 'InsurTech and digital insurance platforms',
-      color: 'from-teal-600 to-teal-700',
-      link: '/industries/insurance'
-    },
-    {
-      icon: Beaker,
-      title: 'Life Sciences',
-      description: 'Pharmaceutical and biotech digital solutions',
-      color: 'from-cyan-600 to-cyan-700',
-      link: '/industries/life-sciences'
-    },
+    // {
+    //   icon: Shield,
+    //   title: 'Insurance',
+    //   description: 'InsurTech and digital insurance platforms',
+    //   color: 'from-teal-600 to-teal-700',
+    //   link: '/industries/insurance'
+    // },
+    // {
+    //   icon: Beaker,
+    //   title: 'Life Sciences',
+    //   description: 'Pharmaceutical and biotech digital solutions',
+    //   color: 'from-cyan-600 to-cyan-700',
+    //   link: '/industries/life-sciences'
+    // },
     {
       icon: Factory,
       title: 'Manufacturing',
@@ -168,7 +168,7 @@ const IndustriesSection = () => {
           <div className="inline-flex items-center px-6 py-3 bg-violet-100 rounded-full mb-6">
             <span className="text-sm font-semibold text-violet-600">Industry Expertise</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold stacia-text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl pb-5 font-bold stacia-text-gradient  mb-3">
             Select your industry. Discover our impact.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">

@@ -1,7 +1,13 @@
 
 import { Link } from 'react-router-dom';
-import { Github, Twitter, Linkedin, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Github, Instagram, Facebook, Linkedin, Mail, MapPin, Phone, ArrowRight, X } from 'lucide-react';
+
+import { FaInstagram } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 import { Button } from '@/components/ui/button';
+import logo from "../assets/logo.svg";
 
 const Footer = () => {
   const footerSections = [
@@ -44,9 +50,14 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
+    { icon: FaLinkedinIn, href: 'https://www.linkedin.com/company/staciacorp', label: 'LinkedIn' },
+    { icon: BsTwitterX, href: 'https://x.com/StaciaCorp', label: 'Twitter' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/stacia_corp_?igsh=MTA5MGdnZms5ZjhwMA==', label: 'Instagram' },
+    { icon: FaFacebookF, href: 'https://www.facebook.com/staciacorp/', label: 'Facebook' },
+    // { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    // { icon: X, href: '#', label: 'LinkedIn' },
+    // { icon: Instagram, href: '#', label: 'Twitter' },
+    // { icon: Facebook, href: '#', label: 'GitHub' },
   ];
 
   return (
@@ -80,17 +91,18 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-8 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-xl font-space">S</span>
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                {/* <span className="text-white font-bold text-xl font-space">S</span> */}
+                <img src={logo} />
               </div>
               <div>
                 <span className="text-2xl font-bold text-white">Stacia Tech</span>
                 <div className="text-sm text-gray-400">Digital Innovation</div>
               </div>
             </Link>
-            
+
             <p className="text-gray-300 stacia-body-md mb-8 leading-relaxed">
-              Premier partner for comprehensive digital solutions and groundbreaking AI-driven products. 
+              Premier partner for comprehensive digital solutions and groundbreaking AI-driven products.
               Empowering enterprises, startups, and innovators to thrive in the digital future.
             </p>
 
@@ -98,15 +110,28 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-gray-300">
                 <Mail className="h-5 w-5 text-violet-400" />
-                <span>hello@staciatech.com</span>
+                <span> <a href={`mailto:${"contactus@staciacorp.com"}`}>
+                  contactus@staciacorp.com
+                </a></span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Phone className="h-5 w-5 text-violet-400" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91-9363034150</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <MapPin className="h-5 w-5 text-violet-400" />
-                <span>Global Headquarters, Tech District</span>
+                {/* <span>Global Headquarters, Tech District</span> */}
+                <a
+                  href="https://maps.app.goo.gl/subrLwPjRTJdTcRZ8"
+                  target="/blank"
+                  rel="noreferrer"
+                >
+                  <span >
+                    Ground Floor, C-53, Guindy Industrial Estate,
+                    <br />
+                    Guindy, Chennai - 32, Tamil Nadu
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -122,6 +147,8 @@ const Footer = () => {
                   <li key={link.title}>
                     <Link
                       to={link.href}
+                      target="/blank"
+
                       className="text-gray-300 hover:text-violet-400 transition-colors duration-300 hover:translate-x-1 inline-block"
                     >
                       {link.title}
