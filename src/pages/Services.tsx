@@ -89,7 +89,7 @@ const Services = () => {
       ],
       gradient: 'from-violet-600 to-purple-600',
       image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      link: '/services/design'
+      link: 'design'
     },
     {
       icon: Code,

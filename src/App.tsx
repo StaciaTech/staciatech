@@ -24,6 +24,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 import ScrollToTop from "./components/ScrollTop";
+import SpecificServices from "./pages/SpecificServices";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/about-us/leadership" element={<Leadership />} />
           <Route path="/about-us/partnerships" element={<Partnerships />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/:title" element={<SpecificServices />}/>
           <Route path="/products" element={<Products />} />
           <Route path="/our-brands" element={<OurBrands />} />
           <Route path="/industries" element={<Industries />} />
