@@ -20,20 +20,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@staciatech.com',
+      details: 'contactus@staciacorp.com',
       description: 'Send us a message anytime'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (555) 123-4567',
+      details: '+91-9363034150',
       description: 'Mon-Fri 9AM-6PM EST'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'Global Headquarters',
-      description: 'Tech District, Innovation Hub'
+      details: ' Ground Floor, C-53, Guindy Industrial Estate',
+      description: 'Guindy, Chennai - 32, Tamil Nadu'
     },
     {
       icon: Clock,
@@ -66,10 +66,10 @@ const Contact = () => {
         <div className="stacia-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="stacia-card-hover animate-fade-in text-center group">
-                <CardContent className="p-8">
+              <Card key={index} className="stacia-card-hover  animate-fade-in text-center group">
+                <CardContent className="p-8 flex flex-col items-center justify-between h-[100%]  ">
                   <div className="w-16 h-16 bg-gradient-to-br from-electric-blue to-vibrant-purple rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <info.icon className="h-8 w-8 text-white" />
+                    <info.icon className="h-8 w-8 text-red-400" />
                   </div>
                   <h3 className="text-xl font-bold text-stacia-gray-900 mb-2">
                     {info.title}

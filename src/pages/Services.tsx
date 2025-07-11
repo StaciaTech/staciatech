@@ -273,7 +273,7 @@ const Services = () => {
 
           <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="service-card stacia-card-hover group cursor-pointer border-0 shadow-xl bg-white overflow-hidden">
+              <Card key={index} className="  service-card stacia-card-hover group cursor-pointer border-0 shadow-xl bg-white overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={service.image} 
@@ -286,7 +286,7 @@ const Services = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8">
+                <CardContent className="p-8 flex flex-col justify-between  h-[72%] lg:h-[75%] xl:h-[72%] ">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {service.title}
                   </h3>
@@ -303,7 +303,7 @@ const Services = () => {
                     ))}
                   </ul>
 
-                  <Button asChild variant="outline" className="w-full group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
+                  <Button asChild variant="outline" className="w-full  group-hover:bg-violet-600  group-hover:text-white transition-all duration-300">
                     <Link to={service.link}>
                       Learn More <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
@@ -326,7 +326,7 @@ const Services = () => {
             <Button asChild className="bg-white text-violet-600 hover:bg-gray-100 text-lg px-10 py-6">
               <Link to="/contact">Start Your Project</Link>
             </Button>
-            <Button asChild variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6">
+            <Button asChild variant="outline" className="border-2 border-white text-gray-600 hover:bg-white/10 text-lg px-10 py-6">
               <Link to="/contact">Schedule Consultation</Link>
             </Button>
           </div>

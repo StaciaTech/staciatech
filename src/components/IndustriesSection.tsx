@@ -180,7 +180,7 @@ const IndustriesSection = () => {
         <div className="industries-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
           {industries.map((industry, index) => (
             <Card key={index} className="industry-card group cursor-pointer border-0 shadow-lg bg-white hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <CardContent className="p-6 text-center">
+              <CardContent className="p-6 flex flex-col items-center justify-between  h-[100%] text-center">
                 <div className={`industry-icon w-16 h-16 bg-gradient-to-br ${industry.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <industry.icon className="h-8 w-8 text-white" />
                 </div>

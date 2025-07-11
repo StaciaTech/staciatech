@@ -78,7 +78,7 @@ const Footer = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
-            <Button variant="outline" asChild className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white">
+            <Button variant="outline" asChild className="border-gray-600 text-gray-600 hover:bg-gray-800 hover:text-white">
               <Link to="/resources/case-studies">View Success Stories</Link>
             </Button>
           </div>

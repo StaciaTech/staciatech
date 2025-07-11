@@ -72,7 +72,7 @@ const HeroSection = () => {
       </div>
       
       <div className="stacia-container relative z-10">
-        <div className="text-center mt-[20%] sm:mt-[7%] md:mt-[7%] lg:mt-[10%]   max-w-6xl mx-auto">
+        <div className="text-center mt-[20%] sm:mt-[7%] md:mt-[7%] md:mb-[5%] lg:mt-[10%]   max-w-6xl mx-auto">
           {/* Badge */}
           <div className="stacia-fade-in mb-8">
             <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-violet-200 shadow-lg">

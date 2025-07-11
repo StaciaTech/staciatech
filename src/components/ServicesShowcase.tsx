@@ -71,7 +71,7 @@ const ServicesShowcase = () => {
         <div className="stacia-grid-2 mb-16">
           {services.map((service, index) => (
             <Card key={index} className="stacia-card-hover  sm:mr-auto group cursor-pointer border-0 shadow-xl bg-white overflow-hidden">
-              <div className="relative h-48  overflow-hidden">
+              <div className="relative h-48 w-full overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -83,7 +83,7 @@ const ServicesShowcase = () => {
                 </div>
               </div>
 
-              <CardContent className="p-8 relative">
+              <CardContent className="p-8 relative flex flex-col justify-between h-[60%]">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">
                     {service.title}
