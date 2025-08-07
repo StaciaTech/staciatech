@@ -227,7 +227,7 @@ const keyFeaturesDetails: Record<string, Array<{ title: string; description: str
   development: [
     {
       title: 'Web Development (Frontend & Backend)',
-      description: 'We build fast, secure, and scalable web applications using modern frameworks. Our solutions prioritize performance, maintainability, and user needs, delivering seamless experiences. From dynamic frontends to robust backends, we tailor development to your business goals, ensuring reliability and future-ready functionality for your digital presence.',
+      description: 'We build fast, secure, and scalable web applications using modern frameworks. Our solutions prioritize performance, maintainability, and user needs, delivering seamless experiences. From dynamic frontends to robust backends and seamless API integrations, we ensure exceptional user experiences and operational efficiency. Our agile methodology enables rapid delivery, continuous improvement, and adaptability to your evolving goals. Whether it’s custom software, cross-platform apps, or complex system integrations, we prioritize performance, security, and scalability. Partner with us to transform your vision into reality with innovative digital products that drive growth, enhance competitiveness, and deliver lasting value to your business and users.',
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
     },
     {
@@ -696,17 +696,30 @@ const SpecificServices: React.FC = () => {
         <section className="w-full bg-gray-50 py-16 mb-16 rounded-3xl shadow-lg">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-violet-700">Our Process</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+              {/* Vertical/Horizontal Progress Line */}
+              <div className="hidden md:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-200 to-violet-400 z-0" style={{top: '56px'}} />
+              <div className="block md:hidden absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-violet-200 to-violet-400 z-0" />
               {(processWorkflows[service.link] || [
                 { title: 'Discovery', description: 'We analyze your needs and define clear project goals.' },
                 { title: 'Design', description: 'Our team creates wireframes, prototypes, and visual concepts.' },
                 { title: 'Development', description: 'We build, test, and refine your solution using best practices.' },
                 { title: 'Launch & Support', description: 'We deploy your solution and provide ongoing support and optimization.' },
               ]).map((step, idx) => (
-                <div key={idx}>
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-violet-100 flex items-center justify-center font-bold text-violet-700">{idx + 1}</div>
-                  <h3 className="font-semibold mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
+                <div
+                  key={idx}
+                  tabIndex={0}
+                  className={`group stacia-glass-card relative z-10 flex flex-col items-center rounded-2xl shadow-lg p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:rotate-1 border-2 border-transparent hover:border-violet-400 stacia-fade-in animation-delay-${idx * 2}00 focus:outline-none focus:ring-4 focus:ring-violet-200`}
+                >
+                  <div
+                    className="w-14 h-14 mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-purple-500 text-white text-2xl font-bold border-4 border-white shadow-lg group-hover:stacia-bounce transition-all duration-300"
+                    style={{ boxShadow: '0 4px 24px 0 rgba(139, 92, 246, 0.15)' }}
+                  >
+                    {/* If you want to use icons, replace the number below with an icon component */}
+                    {idx + 1}
+                  </div>
+                  <h3 className="font-semibold mb-2 text-lg md:text-xl text-gray-900">{step.title}</h3>
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -774,7 +787,7 @@ const SpecificServices: React.FC = () => {
                   className="overflow-hidden rounded-xl border border-gray-200 bg-white transition-all shadow-sm data-[state=open]:border-violet-400 data-[state=open]:shadow-lg"
                 >
                   <AccordionTrigger
-                    className="text-lg font-semibold text-gray-900 flex justify-between items-center px-6 py-5 focus:outline-none focus:ring-2 focus:ring-violet-400 transition-all border-none"
+                    className="text-lg font-semibold text-gray-900 flex justify-between items-center px-6 py-5 focus:outline-none transition-all border-none"
                   >
                     <span className="text-left">{faq.question}</span>
                   </AccordionTrigger>

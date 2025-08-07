@@ -427,3 +427,11 @@
     }
   }
 }
+
+@keyframes stacia-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.group-hover\:stacia-bounce:hover {
+  animation: stacia-bounce 0.5s;
+}
