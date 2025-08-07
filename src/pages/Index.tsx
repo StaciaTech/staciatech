@@ -118,7 +118,7 @@ const Index = () => {
 
           <div className="stacia-grid-2 mb-16">
             {products.map((product, index) => (
-              <Card key={index} className="stacia-card-hover group cursor-pointer border-0 shadow-xl bg-white overflow-hidden">
+              <Card key={index} className="stacia-card-hover group  cursor-pointer border-0 shadow-xl bg-white overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={product.image} 
@@ -132,7 +132,7 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8 relative">
+                <CardContent className="p-8 relative flex flex-col justify-between h-[55%]">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-bold text-gray-900">
                       {product.name}
@@ -177,7 +177,7 @@ const Index = () => {
 
           <div className="stacia-grid max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-xl bg-white p-8 stacia-card-hover">
+              <Card key={index} className="border-0 shadow-xl bg-white p-8 stacia-card-hover flex flex-col justify-between">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -220,7 +220,7 @@ const Index = () => {
               <Button asChild className="stacia-button-primary text-lg px-12 py-6">
                 <Link to="/contact">Start Your Journey</Link>
               </Button>
-              <Button asChild variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-12 py-6 text-lg">
+              <Button asChild variant="outline" className="border-2 border-white text-gray-600 hover:bg-white hover:text-gray-900 px-12 py-6 text-lg">
                 <Link to="/resources/case-studies">See Success Stories</Link>
               </Button>
             </div>

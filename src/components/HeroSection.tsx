@@ -43,7 +43,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-gray-50 to-violet-50">
+    <section className="relative min-h-screen pb-[5%] md:pb-[0%] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-gray-50 to-violet-50">
       {/* Parallax Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div 
@@ -72,7 +72,7 @@ const HeroSection = () => {
       </div>
       
       <div className="stacia-container relative z-10">
-        <div className="text-center max-w-6xl mx-auto">
+        <div className="text-center mt-[20%] sm:mt-[7%] md:mt-[7%] md:mb-[5%] lg:mt-[10%]   max-w-6xl mx-auto">
           {/* Badge */}
           <div className="stacia-fade-in mb-8">
             <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-violet-200 shadow-lg">
@@ -82,8 +82,9 @@ const HeroSection = () => {
           </div>
           
           {/* Main Headline */}
-          <div className="stacia-fade-in animation-delay-200 mb-12">
-            <h1 className="stacia-heading-xl mb-8">
+          <div className="stacia-fade-in animation-delay-200 mb-12 mx-[5%] sm:mx-auto">
+            {/* <h1 className="stacia-heading-xl mb-8"> */}
+            <h1 className="font-bold leading-tight text-[2rem] md:text-[2rem] lg:text-[2.8rem] xl:text-[3rem] 2xl:text-[4rem] mb-8">
               <span className="block stacia-text-gradient">Digital</span>
               <span className="block text-gray-900">Excellence</span>
             </h1>
@@ -127,7 +128,7 @@ const HeroSection = () => {
           <div className="stacia-fade-in animation-delay-600 grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="stacia-glass-card rounded-2xl p-6 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300 transform hover:scale-105">
+                <div className="stacia-glass-card rounded-2xl h-[100%] p-6 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300 transform hover:scale-105">
                   <stat.icon className="w-8 h-8 text-violet-600 mx-auto mb-3" />
                   <div className="text-3xl md:text-4xl font-bold stacia-text-gradient mb-2">
                     {stat.value}
@@ -143,11 +144,11 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-gray-300 rounded-full p-1">
           <div className="w-1 h-3 bg-violet-600 rounded-full mx-auto animate-pulse"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
