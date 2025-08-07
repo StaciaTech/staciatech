@@ -2,9 +2,9 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { 
-  Sparkles, 
-  Zap, 
+import {
+  Sparkles,
+  Zap,
   Shield,
   Brain,
   ArrowRight,
@@ -63,17 +63,17 @@ const ServicesShowcase = () => {
             <span className="text-gray-900">Digital Solutions</span>
           </h2>
           <p className="stacia-body-lg text-gray-600 max-w-3xl mx-auto">
-            From strategic planning to seamless execution, we deliver comprehensive digital transformation 
+            From strategic planning to seamless execution, we deliver comprehensive digital transformation
             that drives measurable business outcomes.
           </p>
         </div>
 
         <div className="stacia-grid-2 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="stacia-card-hover group cursor-pointer border-0 shadow-xl bg-white overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
+            <Card key={index} className="stacia-card-hover  sm:mr-auto group cursor-pointer border-0 shadow-xl bg-white overflow-hidden">
+              <div className="relative h-48 w-full overflow-hidden">
+                <img
+                  src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -82,20 +82,23 @@ const ServicesShowcase = () => {
                   <service.icon className="h-6 w-6 text-white" />
                 </div>
               </div>
-              
-              <CardContent className="p-8 relative">
+
+              <CardContent className="p-8 relative flex flex-col justify-between h-[60%]">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">
                     {service.title}
+                    <div className="text-sm text-violet-600 font-semibold bg-violet-100 px-3 py-1 w-auto mt-3 rounded-full">
+                      {service.metrics}
+                    </div>
                   </h3>
-                  <div className="text-sm text-violet-600 font-semibold bg-violet-100 px-3 py-1 rounded-full">
+                  {/* <div className="text-sm text-violet-600 font-semibold bg-violet-100 px-3 py-1 rounded-full">
                     {service.metrics}
-                  </div>
+                  </div> */}
                 </div>
                 <p className="text-gray-600 leading-relaxed stacia-body-md mb-6">
                   {service.description}
                 </p>
-                
+
                 <div className="flex items-center text-violet-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
                   <span className="mr-2">Learn More</span>
                   <ArrowRight className="w-4 h-4" />

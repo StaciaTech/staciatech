@@ -23,6 +23,9 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+import ScrollToTop from "./components/ScrollTop";
+import SpecificServices from "./pages/SpecificServices";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -31,12 +34,14 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about-us/our-story" element={<AboutUs />} />
           <Route path="/about-us/leadership" element={<Leadership />} />
           <Route path="/about-us/partnerships" element={<Partnerships />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/:title" element={<SpecificServices />}/>
           <Route path="/products" element={<Products />} />
           <Route path="/our-brands" element={<OurBrands />} />
           <Route path="/industries" element={<Industries />} />

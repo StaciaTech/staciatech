@@ -301,13 +301,13 @@
   .stacia-grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 
   .stacia-grid-2 {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 
   .stacia-grid-3 {
@@ -426,4 +426,12 @@
       color: #1f2937;
     }
   }
+}
+
+@keyframes stacia-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.group-hover\:stacia-bounce:hover {
+  animation: stacia-bounce 0.5s;
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from "../assets/logo.svg";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 2);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -62,31 +63,31 @@ const Navigation = () => {
         { title: 'Awards & Recognition', href: '/testimonials', description: 'Industry recognition' }
       ],
     },
-    {
-      title: 'Investors',
-      items: [
-        { title: 'Investor Relations', href: '/contact', description: 'Financial information and updates' },
-        { title: 'Annual Reports', href: '/resources', description: 'Financial performance' },
-        { title: 'Governance', href: '/about-us/leadership', description: 'Corporate governance' }
-      ],
-    },
+    // {
+    //   title: 'Investors',
+    //   items: [
+    //     { title: 'Investor Relations', href: '/contact', description: 'Financial information and updates' },
+    //     { title: 'Annual Reports', href: '/resources', description: 'Financial performance' },
+    //     { title: 'Governance', href: '/about-us/leadership', description: 'Corporate governance' }
+    //   ],
+    // },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
           ? 'stacia-nav-blur shadow-lg'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="stacia-container">
         <div className="flex items-center justify-between h-16">
           {/* Professional Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-purple-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
-                <span className="text-white font-bold text-lg font-space">S</span>
+              <div className="w-10 h-10  flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
+                {/* <span className="text-white font-bold text-lg font-space">S</span> */}
+                <img src={logo} />
               </div>
             </div>
             <div className="hidden sm:block">
@@ -103,7 +104,7 @@ const Navigation = () => {
                   {item.title}
                   <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
                 </button>
-                
+
                 {/* Enhanced Dropdown */}
                 <div className="absolute top-full left-0 mt-2 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                   <div className="bg-white rounded-xl shadow-2xl border border-gray-100 p-6">
@@ -176,7 +177,7 @@ const Navigation = () => {
                   </div>
                 </div>
               ))}
-              
+
               <div className="pt-6 border-t border-gray-200">
                 <Button className="stacia-button-primary w-full">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link>

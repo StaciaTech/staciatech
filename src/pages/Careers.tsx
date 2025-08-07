@@ -126,7 +126,7 @@ const Careers = () => {
               <Card key={index} className="stacia-card-hover animate-fade-in text-center group">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-gradient-to-br from-electric-blue to-vibrant-purple rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <value.icon className="h-8 w-8 text-white" />
+                    <value.icon className="h-8 w-8 " />
                   </div>
                   <h3 className="text-xl font-bold text-stacia-gray-900 mb-4">
                     {value.title}

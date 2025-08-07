@@ -306,7 +306,7 @@ const CaseStudies = () => {
             <Button className="bg-white text-violet-600 hover:bg-gray-100 text-lg px-10 py-6">
               Start Your Project
             </Button>
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6">
+            <Button variant="outline" className="border-2 border-white text-gray-600 hover:bg-white/10 text-lg px-10 py-6">
               Schedule Consultation
             </Button>
           </div>

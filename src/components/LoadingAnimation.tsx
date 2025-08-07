@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
+import logo from "../assets/logo.svg";
 
 interface LoadingAnimationProps {
   onComplete: () => void;
@@ -58,9 +59,10 @@ const LoadingAnimation = ({ onComplete }: LoadingAnimationProps) => {
     <div className="loading-screen fixed inset-0 z-50 bg-gradient-to-br from-white via-gray-50 to-violet-50 flex items-center justify-center">
       <div className="text-center">
         {/* Enhanced Logo Animation */}
-        <div className="logo-container w-24 h-24 bg-gradient-to-br from-violet-600 to-purple-600 rounded-3xl flex items-center justify-center mb-8 mx-auto relative overflow-hidden">
+        <div className="logo-container w-24 h-24  flex items-center justify-center mb-8 mx-auto relative overflow-hidden ">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shimmer"></div>
-          <span className="text-white font-bold text-4xl font-space relative z-10">S</span>
+          {/* <span className="text-white font-bold text-4xl font-space relative z-10">S</span> */}
+          <img src={logo} />
         </div>
 
         {/* Brand Name with typing effect */}
