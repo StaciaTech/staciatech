@@ -70,7 +70,7 @@ const Index = () => {
       author: "Sarah Chen",
       role: "CTO, TechCorp",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b4e5d4cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
     },
     {
       quote: "The level of innovation and technical expertise is unmatched. They delivered beyond our expectations.",
