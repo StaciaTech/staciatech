@@ -227,7 +227,7 @@ const keyFeaturesDetails: Record<string, Array<{ title: string; description: str
   development: [
     {
       title: 'Web Development (Frontend & Backend)',
-      description: 'We build fast, secure, and scalable web applications using modern frameworks. Our solutions prioritize performance, maintainability, and user needs, delivering seamless experiences. From dynamic frontends to robust backends and seamless API integrations, we ensure exceptional user experiences and operational efficiency. Our agile methodology enables rapid delivery, continuous improvement, and adaptability to your evolving goals. Whether it’s custom software, cross-platform apps, or complex system integrations, we prioritize performance, security, and scalability. Partner with us to transform your vision into reality with innovative digital products that drive growth, enhance competitiveness, and deliver lasting value to your business and users.',
+      description: 'We create fast, secure, and scalable web applications with modern frameworks, focusing on performance, user experience, and adaptability. From custom software to complex integrations, we deliver innovative digital solutions that drive growth, enhance competitiveness, and provide lasting value.',
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
     },
     {
